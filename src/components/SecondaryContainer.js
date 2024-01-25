@@ -7,10 +7,15 @@ AOS.init();
 const SecondaryContainer = () => {
   const movies = useSelector((store) => store.movies);
 
-  return movies.upcoming ? (
+  return movies.upcoming &&
+    movies.topRated &&
+    movies.trailer &&
+    movies.Popular &&
+    movies.nowPlaying ? (
     <div className="bg-black ">
       <div className="relative   pb-4 pt-5 pl-2 ">
-        <div className="mb-8"
+        <div
+          className="mb-8"
           data-aos="fade-up"
           data-aos-offset="200"
           data-aos-delay="50"
@@ -18,7 +23,8 @@ const SecondaryContainer = () => {
         >
           <MovieList title={"Continue Watching"} movies={movies.upcoming} />
         </div>
-        <div className="mb-8"
+        <div
+          className="mb-8"
           data-aos="fade-up"
           data-aos-offset="200"
           data-aos-delay="50"
@@ -26,7 +32,8 @@ const SecondaryContainer = () => {
         >
           <MovieList title={"Popular"} movies={movies.Popular} />
         </div>
-        <div className="mb-8"
+        <div
+          className="mb-8"
           data-aos="fade-up"
           data-aos-offset="200"
           data-aos-delay="50"
