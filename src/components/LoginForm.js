@@ -26,6 +26,7 @@ const LoginForm = () => {
     setErrMessage(message);
     if (message) {
       setLoading(false);
+      
       return;
     }
     if (!signIn) {
@@ -99,7 +100,7 @@ const LoginForm = () => {
         ref={email}
         autoComplete="on"
         type="text"
-        placeholder="Email or phone number"
+        placeholder="Email "
         className="py-2 px-4 my-2 bg-neutral-800 rounded-sm w-full"
       />
       <input
