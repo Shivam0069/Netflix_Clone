@@ -12,10 +12,10 @@ const Home = () => {
   };
   return (
    
-    <div className="bg-black">
+    <div className="bg-black overflow-hidden">
       <section
         style={backgroundStyle}
-        className={` h-screen object-cover w-full`}
+        className={` h-screen w-screen`}
       >
         <div className=" max-w-6xl mx-auto ">
           <div className="flex justify-between ">
@@ -25,7 +25,7 @@ const Home = () => {
                 <option className="text-black" value="English">English</option>
                 <option  className="text-black" value="Hindi">हिंदी</option>
               </select>
-              <button  onClick={() => navigate('/login')} className=" bg-red-600 m-auto text-white px-3 py-1 text-md rounded-md">
+              <button  onClick={() => navigate('/login')} className="hidden lg:inline bg-red-600 m-auto text-white px-3 py-1 text-md rounded-md">
                 sign in
               </button>
             </div>
