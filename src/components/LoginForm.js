@@ -15,6 +15,7 @@ const LoginForm = () => {
   const [signIn, setSignIn] = useState(false);
   const [errMessage, setErrMessage] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [showPass, setShowPass] = useState(false);
   const email = useRef(null);
   const password = useRef(null);
   const name = useRef(null);
@@ -104,10 +105,20 @@ const LoginForm = () => {
       <input
         ref={password}
         autoComplete="on"
-        type="password"
+        type={showPass ? "text" : "password"}
         placeholder="password"
         className="py-2 px-4 my-2 bg-neutral-800 rounded-sm w-full"
       />
+      <div className="w-full flex justify-end">
+        <button
+          onClick={() => setShowPass((prev) => !prev)}
+          className={`text-white  w-fit brightness-75  hover:brightness-125 text-sm ${
+            showPass && "brightness-150"
+          }`}
+        >
+          Show
+        </button>
+      </div>
       <p className="text-red-600 text-sm font-semibold py-2">{errMessage}</p>
       <button
         className="p-2 my-6 w-full bg-red-600 rounded-sm"

@@ -8,6 +8,7 @@ import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
+
 // Import the functions you need from the SDKs you need
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -20,7 +21,7 @@ const firebaseConfig = {
   projectId: "netflix-project-708e8",
   storageBucket: "netflix-project-708e8.appspot.com",
   messagingSenderId: "965627258992",
-  appId: "1:965627258992:web:3d9306c53adf175ec02cb5",
+  appId: "1:965627258992:web:3d9306c53adf175ec02cb5"
 };
 
 // Initialize Firebase
