@@ -21,8 +21,8 @@ const Header = () => {
   };
 
   const navigate = useNavigate();
-  const auth = getAuth();
   const dispatch = useDispatch();
+  const auth = getAuth();
 
   const isLoggedIn = auth.currentUser;
   useEffect(() => {
