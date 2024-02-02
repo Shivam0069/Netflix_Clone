@@ -9,7 +9,7 @@ export default function HeaderItem({ title}) {
   return (
     <div
       onClick={() => dispatch(changeSelected(title))}
-      className={`hidden lg:inline-flex text-white text-sm mx-1 lg:mx-2 cursor-pointer hover:scale-110   ${isActive ? "brightness-200" : "brightness-50"}`}
+      className={`hidden lg:inline-flex text-white text-sm mx-1 lg:mx-2 cursor-pointer hover:scale-110   ${isActive ? "brightness-200" : "brightness-75"}`}
     >
       {title}
     </div>

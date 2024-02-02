@@ -9,11 +9,11 @@ const ProtectedRoute = () => {
   const isLoggedIn = auth.currentUser;
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!isLoggedIn) {
-      navigate("/login");
-    }
-  }, [isLoggedIn, navigate]);
+  // useEffect(() => {
+  //   if (!isLoggedIn) {
+  //     navigate("/login");
+  //   }
+  // }, [isLoggedIn, navigate]);
 
   return isLoggedIn ? (
     <Browse />

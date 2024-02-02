@@ -8,8 +8,8 @@ import appStore from "./utils/appStore";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={appStore}>
-    <React.StrictMode>
       <App />
-    </React.StrictMode>
+    {/* <React.StrictMode>
+    </React.StrictMode> */}
   </Provider>
 );
