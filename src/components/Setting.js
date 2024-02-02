@@ -14,7 +14,6 @@ import toast from "react-hot-toast";
 export default function Setting() {
   const auth = getAuth();
   const [user, setUser] = useState(null);
-  const filePickerRef = useRef(null);
   const [dob, setDob] = useState("");
   const [loading, setLoading] = useState(false);
   const [loadingPas, setLoadingPas] = useState(false);
@@ -80,14 +79,13 @@ export default function Setting() {
     updatePassword(user, passwordRef.current.value)
       .then(() => {
         toast.success("Password Updated Successfully");
+        setLoadingPas(false);
       })
       .catch((error) => {
         toast.error("Something went wrong !! ");
         toast.error("Try login and then update !! ");
-
-        console.log(error);
+        setLoadingPas(false);
       });
-    setLoadingPas(false);
   }
   return (
     <div>
@@ -95,11 +93,11 @@ export default function Setting() {
       <div className="mt-32 flex flex-col ml-10">
         {user ? (
           <>
-            <div>
-              <h1 className="text-3xl font-bold">User Details:</h1>
+            <div className="border  p-2 w-fit shadow-lg">
+              <h1 className="text-3xl font-bold text-[#41EFF5]">User Details:</h1>
               <div className="mt-10 flex flex-col space-y-6">
                 <div className="flex items-center space-x-4">
-                  <h1 className="w-32 text-2xl font-semibold">Name:</h1>
+                  <h1 className="w-24 text-2xl font-semibold">Name:</h1>
                   <input
                     placeholder={userData?.name || "Enter your Name"}
                     ref={nameRef}
@@ -108,7 +106,7 @@ export default function Setting() {
                   />
                 </div>
                 <div className="flex items-center space-x-4">
-                  <h1 className="w-32  text-2xl font-semibold">DOB:</h1>
+                  <h1 className="w-24  text-2xl font-semibold">DOB:</h1>
                   <input
                     value={dob}
                     onChange={handleInputChange}
@@ -118,7 +116,7 @@ export default function Setting() {
                   />
                 </div>
                 <div className="flex items-center space-x-4">
-                  <h1 className="w-32  text-2xl font-semibold">Address:</h1>
+                  <h1 className="w-24  text-2xl font-semibold">Address:</h1>
                   <input
                     placeholder={userData?.address || "Address"}
                     ref={addressRef}
@@ -128,16 +126,17 @@ export default function Setting() {
                 </div>
               </div>
               <button
-                className="bg-blue-500 px-6 py-3 rounded-md ml-44 mt-8 hover:scale-110 transition-transform duration-200 "
+                className="bg-[#CAB60D] text-lg px-6 py-3 rounded-md  mt-8 hover:scale-110 transition-transform duration-200 "
                 onClick={saveHandler}
               >
                 {loading ? "Updating.." : "Update"}
               </button>
             </div>
-            <div className="mt-10">
-              <h1 className="text-3xl font-bold">User Credentials:</h1>
+            <div className="border max-w-2xl bg-gray-500 mt-5"></div>
+            <div className="border  p-2 w-fit shadow-lg mt-5">
+              <h1 className="text-3xl font-bold text-[#41EFF5]">User Credentials:</h1>
 
-              <div className="flex  items-center space-x-4 mt-10">
+              <div className="flex  items-center space-x-4 mt-4">
                 <h1 className="w-32 text-2xl">Password:</h1>
                 <input
                   placeholder="**********"
@@ -145,7 +144,7 @@ export default function Setting() {
                   ref={passwordRef}
                 />
                 <button
-                  className="bg-blue-500 px-4 py-2 rounded-md hover:scale-110  transition-transform duration-200"
+                  className="bg-[#CAB60D] text-lg px-4 py-2 rounded-md hover:scale-110  transition-transform duration-200"
                   onClick={passwordUpdate}
                 >
                   {loadingPas ? "Updating.." : "Update"}
